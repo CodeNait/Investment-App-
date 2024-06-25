@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investment Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h2>Stocks</h2>
+            <div id="stock-buttons">
+                <!-- Stock buttons will be added here dynamically -->
+            </div>
+            <button id="add-stock-button">Add Stock</button>
+        </div>
+        <div class="main-content">
+            <h1>Investment Calculator</h1>
+            <form id="investment-form">
+                <label for="stockName">Stock Name:</label>
+                <input type="text" id="stockName" required>
+                
+                <label for="initialInvestment">Initial Investment ($):</label>
+                <input type="number" id="initialInvestment" required>
+                
+                <label for="annualDividendPercent">Annual Dividend (%):</label>
+                <input type="number" id="annualDividendPercent" step="0.01">
+                
+                <label for="annualDividendValue">Annual Dividend Value ($):</label>
+                <input type="number" id="annualDividendValue" step="0.01">
+                
+                <label for="dividendGrowth">Dividend Growth Rate (%):</label>
+                <input type="number" id="dividendGrowth" step="0.01" required>
+                
+                <label for="stockGrowth">Stock Growth Rate (%):</label>
+                <input type="number" id="stockGrowth" step="0.01" required>
+                
+                <label for="timeHorizon">Time Horizon (years):</label>
+                <input type="number" id="timeHorizon" required>
+                
+                <button type="button" onclick="calculateInvestment()">Calculate</button>
+                <button type="button" id="save-stock-button">Save Stock</button>
+            </form>
+            
+            <div id="results">
+                <h2>Results</h2>
+                <p id="finalValue"></p>
+                <canvas id="portfolioValueChart"></canvas>
+                <canvas id="dividendValueChart"></canvas>
+                <canvas id="stockPriceChart"></canvas>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
